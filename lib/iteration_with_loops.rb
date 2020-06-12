@@ -3,5 +3,21 @@
   # Combine all Strings present in the AoA into a single value and return it
 
 def join_nested_strings(src)
-   
+  nested_strings =[]
+  row_index = 0 
+  while row_index < src.count do
+    element_index = 0 
+    word = 9 
+    while element_index < src[row_index].count do 
+      if src[row_index][element_index].is_a? String 
+        word = src[row_index][element_index]
+        nested_strings << word 
+      end
+      element_index += 1 
+    end
+    row_index += 1 
+  end
+      
+  sentence = nested_strings.join 
+  sentence
 end 
